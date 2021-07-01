@@ -11,7 +11,7 @@ Account _$AccountFromJson(Map<String, dynamic> json) {
     id: json['id'] as String,
     url: json['url'] as String,
     bio: json['bio'] as String,
-    reputation: (json['reputation'] as num)?.toDouble(),
+    reputation: (json['reputation'] as num).toDouble(),
     created: _dateTimeFromTimestamp(json['created'] as int),
     proExpiration: json['pro_expiration'],
   );
@@ -37,12 +37,12 @@ AccountSettings _$AccountSettingsFromJson(Map<String, dynamic> json) {
     proExpiration: json['pro_expiration'],
     acceptedGalleryTerms: json['accepted_gallery_terms'] as bool,
     activeEmails:
-        (json['active_emails'] as List)?.map((e) => e as String)?.toList(),
+        (json['active_emails'] as List).map((e) => e as String).toList(),
     messagingEnabled: json['messaging_enabled'] as bool,
     blockedUsers: (json['blocked_users'] as List)
-        ?.map((e) =>
+        .map((e) =>
     e == null ? null : BlockedUser.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+        .toList(),
     showMature: json['show_mature'] as bool,
     firstParty: json['first_party'] as bool,
   );
@@ -84,9 +84,9 @@ Album _$AlbumFromJson(Map<String, dynamic> json) {
     order: json['order'] as int,
     imagesCount: json['images_count'] as int,
     images: (json['images'] as List)
-        ?.map(
+        .map(
             (e) => e == null ? null : Image.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+        .toList(),
     inGallery: json['in_gallery'] as bool,
     deleteHash: json['deletehash'] as String,
   );
@@ -155,9 +155,9 @@ Map<String, dynamic> _$AvatarDataToJson(AvatarData instance) =>
 AvatarListData _$AvatarListDataFromJson(Map<String, dynamic> json) {
   return AvatarListData(
     availableAvatars: (json['available_avatars'] as List)
-        ?.map((e) =>
+        .map((e) =>
             e == null ? null : Avatar.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+        .toList(),
     availableAvatarsCount: json['available_avatars_count'] as int,
     avatarsAreDefault: json['avatars_are_default'] as bool,
   );
@@ -192,7 +192,7 @@ Comment _$CommentFromJson(Map<String, dynamic> json) {
     onAlbum: json['on_album'] as bool,
     ups: json['ups'] as int,
     downs: json['downs'] as int,
-    points: (json['points'] as num)?.toDouble(),
+    points: (json['points'] as num).toDouble(),
     datetime: _dateTimeFromTimestamp(json['datetime'] as int),
     author: json['author'] as String,
     authorId: json['author_id'] as int,
@@ -200,9 +200,9 @@ Comment _$CommentFromJson(Map<String, dynamic> json) {
     deleted: json['deleted'] as bool,
     vote: stringToVote(json['vote'] as String),
     children: (json['children'] as List)
-        ?.map((e) =>
+        .map((e) =>
             e == null ? null : Comment.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+        .toList(),
   );
 }
 
@@ -233,9 +233,9 @@ Conversation _$ConversationFromJson(Map<String, dynamic> json) {
     withAccount: json['with_account'] as String,
     messageCount: json['message_count'] as int,
     messages: (json['messages'] as List)
-        ?.map((e) =>
+        .map((e) =>
             e == null ? null : Message.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+        .toList(),
     done: json['done'] as bool,
     page: json['page'] as int,
   );
@@ -258,7 +258,7 @@ CustomGallery _$CustomGalleryFromJson(Map<String, dynamic> json) {
   return CustomGallery(
     accountUrl: json['account_url'] as String,
     link: json['link'] as String,
-    tags: (json['tags'] as List)?.map((e) => e as String)?.toList(),
+    tags: (json['tags'] as List).map((e) => e as String).toList(),
     itemCount: json['item_count'] as int,
     items: json['items'] as List,
   );
@@ -301,14 +301,14 @@ GalleryAlbum _$GalleryAlbumFromJson(Map<String, dynamic> json) {
     topicId: json['topic_id'],
     imagesCount: json['images_count'] as int,
     images: (json['images'] as List)
-        ?.map(
+        .map(
             (e) => e == null ? null : Image.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+        .toList(),
     inMostViral: json['in_most_viral'],
     favoriteCount: json['favorite_count'] as int,
     tags: (json['tags'] as List)
-        ?.map((e) => e == null ? null : Tag.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+        .map((e) => e == null ? null : Tag.fromJson(e as Map<String, dynamic>))
+        .toList(),
   );
 }
 
@@ -361,8 +361,8 @@ GalleryAlbumImage _$GalleryAlbumImageFromJson(Map<String, dynamic> json) {
     views: json['views'] as int,
     favoriteCount: json['favorite_count'] as int,
     tags: (json['tags'] as List)
-        ?.map((e) => e == null ? null : Tag.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+        .map((e) => e == null ? null : Tag.fromJson(e as Map<String, dynamic>))
+        .toList(),
     hasSound: json['has_sound'] as bool,
     link: json['link'] as String,
     ups: json['ups'] as int,
@@ -378,9 +378,9 @@ GalleryAlbumImage _$GalleryAlbumImageFromJson(Map<String, dynamic> json) {
     topicId: json['topic_id'],
     imagesCount: json['images_count'] as int,
     images: (json['images'] as List)
-        ?.map(
+        .map(
             (e) => e == null ? null : Image.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+        .toList(),
     inMostViral: json['in_most_viral'],
     type: json['type'] as String,
     animated: json['animated'] as bool,
@@ -465,8 +465,8 @@ GalleryImage _$GalleryImageFromJson(Map<String, dynamic> json) {
     favoriteCount: json['favorite_count'] as int,
     hasSound: json['has_sound'] as bool,
     tags: (json['tags'] as List)
-        ?.map((e) => e == null ? null : Tag.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+        .map((e) => e == null ? null : Tag.fromJson(e as Map<String, dynamic>))
+        .toList(),
     nsfw: json['nsfw'] as bool,
     commentCount: json['comment_count'] as int,
     topic: json['topic'] as String,
@@ -528,9 +528,9 @@ GalleryProfile _$GalleryProfileFromJson(Map<String, dynamic> json) {
     totalGalleryFavorites: json['total_gallery_favorites'] as int,
     totalGallerySubmissions: json['total_gallery_submissions'] as int,
     trophies: (json['trophies'] as List)
-        ?.map((e) =>
+        .map((e) =>
             e == null ? null : Trophy.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+        .toList(),
   );
 }
 
@@ -556,8 +556,8 @@ Image _$ImageFromJson(Map<String, dynamic> json) {
     views: json['views']  ,
     bandwidth: json['bandwidth']  ,
     tags: (json['tags'] as List)
-        ?.map((e) => e == null ? null : Tag.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+        .map((e) => e == null ? null : Tag.fromJson(e as Map<String, dynamic>))
+        .toList(),
     link: json['link']  ,
     vote: stringToVote(json['vote'] ??""),
     favorite: json['favorite']  ,
